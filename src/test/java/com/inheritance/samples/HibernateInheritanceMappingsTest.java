@@ -2,8 +2,8 @@ package com.inheritance.samples;
 
 import com.inheritance.samples.domain.joinedsubclass.CustomizedBroker;
 import com.inheritance.samples.domain.joinedsubclass.RoleKey;
-import com.inheritance.samples.domain.unionsubclass.CustomizedCreditFacility;
-import com.inheritance.samples.domain.unionsubclass.FacilityKey;
+import com.inheritance.samples.domain.unionsubclass.CustomizedContractEmployee;
+import com.inheritance.samples.domain.unionsubclass.EmployeeKey;
 import com.inheritance.util.HibernateRepository;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -23,16 +23,16 @@ public class HibernateInheritanceMappingsTest {
     @Test
     public void shouldPersistUnionSubclassCustomizedCreditFacility() throws Exception {
 
-        CustomizedCreditFacility customizedCreditFacility = new CustomizedCreditFacility();
-        customizedCreditFacility.setKey(new FacilityKey("1", "1"));
-        customizedCreditFacility.setBranchCode("08");
-        customizedCreditFacility.setPeriodicityType("DAILY");
-        customizedCreditFacility.setExternalSystem("External");
+        CustomizedContractEmployee customizedContractEmployee = new CustomizedContractEmployee();
+        customizedContractEmployee.setKey(new EmployeeKey("1", "1"));
+        customizedContractEmployee.setName("08");
+        customizedContractEmployee.setContractTerm("DAILY");
+        customizedContractEmployee.setAdditionalTerms("External");
 
-        HibernateRepository<CustomizedCreditFacility, FacilityKey> repository = new HibernateRepository<>();
-        repository.save(customizedCreditFacility);
+        HibernateRepository<CustomizedContractEmployee, EmployeeKey> repository = new HibernateRepository<>();
+        repository.save(customizedContractEmployee);
 
-        CustomizedCreditFacility savedFacility = repository.load(CustomizedCreditFacility.class, new FacilityKey("1", "1"));
+        CustomizedContractEmployee savedFacility = repository.load(CustomizedContractEmployee.class, new EmployeeKey("1", "1"));
         Assert.assertNotNull(savedFacility);
     }
 

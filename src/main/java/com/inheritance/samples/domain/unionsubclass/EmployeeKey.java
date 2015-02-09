@@ -2,21 +2,21 @@ package com.inheritance.samples.domain.unionsubclass;
 
 import java.io.Serializable;
 
-public class FacilityKey implements Serializable{
+public class EmployeeKey implements Serializable{
     private String id;
-    private String facilityType;
+    private String employeeType;
 
-    public FacilityKey(String id, String facilityType) {
+    public EmployeeKey(String id, String employeeType) {
         this.id = id;
-        this.facilityType = facilityType;
+        this.employeeType = employeeType;
     }
 
-    public String getFacilityType() {
-        return facilityType;
+    public String getEmployeeType() {
+        return employeeType;
     }
 
-    public void setFacilityType(String facilityType) {
-        this.facilityType = facilityType;
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
     }
 
     public String getId() {
@@ -32,9 +32,9 @@ public class FacilityKey implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FacilityKey that = (FacilityKey) o;
+        EmployeeKey that = (EmployeeKey) o;
 
-        if (!facilityType.equals(that.facilityType)) return false;
+        if (!employeeType.equals(that.employeeType)) return false;
         if (!id.equals(that.id)) return false;
 
         return true;
@@ -43,7 +43,7 @@ public class FacilityKey implements Serializable{
     @Override
     public int hashCode() {
         int result = id.hashCode();
-        result = 31 * result + facilityType.hashCode();
+        result = 31 * result + employeeType.hashCode();
         return result;
     }
 }

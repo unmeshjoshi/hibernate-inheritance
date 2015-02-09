@@ -2,17 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field">
     <class abstract="true" dynamic-insert="true" dynamic-update="true" lazy="false"
-           name="com.inheritance.samples.domain.unionsubclass.Facility">
-        <composite-id class="com.inheritance.samples.domain.unionsubclass.FacilityKey" name="key">
+           name="com.inheritance.samples.domain.unionsubclass.Employee">
+        <composite-id class="com.inheritance.samples.domain.unionsubclass.EmployeeKey" name="key">
             <key-property column="ID" name="id" type="string"/>
-            <key-property column="facility_type" name="facilityType" type="string">
+            <key-property column="employee_type" name="employeeType" type="string">
             </key-property>
         </composite-id>
-        <property column="BRANCH_CODE" name="branchCode" type="string"/>
+        <property column="name" name="name" type="string"/>
         <union-subclass dynamic-insert="true" dynamic-update="true" lazy="false"
-                        name="com.inheritance.samples.domain.unionsubclass.CreditFacility"
-                        table="CREDIT_FACILITY">
-            <property column="PERIODICITY_TYPE" name="periodicityType" type="string"/>
+                        name="com.inheritance.samples.domain.unionsubclass.ContractEmployee"
+                        table="employee">
+            <property column="contract_terms" name="contractTerm" type="string"/>
         </union-subclass>
     </class>
 </hibernate-mapping>

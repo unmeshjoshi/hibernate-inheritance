@@ -5,6 +5,6 @@
 <hibernate-configuration>
     <session-factory>
         <mapping resource="hibernate/hbm/joinedsubclass/Role.hbm.xml" />
-        <mapping resource="hibernate/hbm/unionsubclass/Facility.hbm.xml" />
+        <mapping resource="hibernate/hbm/unionsubclass/Employee.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
