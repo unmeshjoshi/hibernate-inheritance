@@ -1,7 +1,7 @@
 package com.inheritance.samples;
 
-import com.inheritance.samples.domain.joinedsubclass.CustomizedBroker;
-import com.inheritance.samples.domain.joinedsubclass.RoleKey;
+import com.inheritance.samples.domain.joinedsubclass.CustomizedProfile;
+import com.inheritance.samples.domain.joinedsubclass.ProfileKey;
 import com.inheritance.samples.domain.unionsubclass.CustomizedContractEmployee;
 import com.inheritance.samples.domain.unionsubclass.EmployeeKey;
 import com.inheritance.util.HibernateRepository;
@@ -39,15 +39,15 @@ public class HibernateInheritanceMappingsTest {
     @Test
     public void shouldPersistJoinedSubclassForCustomizedBroker() throws Exception {
 
-        CustomizedBroker broker = new CustomizedBroker();
-        broker.setRoleKey(new RoleKey("1", "1", "1"));
+        CustomizedProfile broker = new CustomizedProfile();
+        broker.setProfileKey(new ProfileKey("1", "1", "1"));
         broker.setProfileSummary("Summary");
         broker.setProfileSummary("AdditionalSummary");
 
-        HibernateRepository<CustomizedBroker, RoleKey> repository = new HibernateRepository<>();
+        HibernateRepository<CustomizedProfile, ProfileKey> repository = new HibernateRepository<>();
         repository.save(broker);
 
-        CustomizedBroker savedBroker = repository.load(CustomizedBroker.class, new RoleKey("1", "1", "1"));
+        CustomizedProfile savedBroker = repository.load(CustomizedProfile.class, new ProfileKey("1", "1", "1"));
         Assert.assertNotNull(savedBroker);
     }
 

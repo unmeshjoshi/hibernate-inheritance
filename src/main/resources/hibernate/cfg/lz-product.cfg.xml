@@ -6,6 +6,6 @@
 <hibernate-configuration>
     <!-- a SessionFactory instance listed as /jndi/name -->
     <session-factory>
-        <mapping resource="hibernate/hbm/joinedsubclass/CustomizedBroker.hbm.xml" />
+        <mapping resource="hibernate/hbm/joinedsubclass/CustomizedProfile.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

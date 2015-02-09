@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <mapping resource="hibernate/hbm/joinedsubclass/Role.hbm.xml" />
+        <mapping resource="hibernate/hbm/joinedsubclass/Profile.hbm.xml" />
         <mapping resource="hibernate/hbm/unionsubclass/Employee.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

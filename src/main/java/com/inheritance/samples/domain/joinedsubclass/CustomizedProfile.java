@@ -1,6 +1,6 @@
 package com.inheritance.samples.domain.joinedsubclass;
 
-public class CustomizedBroker extends Role {
+public class CustomizedProfile extends SummarizedProfile {
     private String additionalProfileSummary;
 
     public String getAdditionalProfileSummary() {
