@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field" default-cascade="none" default-lazy="true">
+    <joined-subclass dynamic-insert="true"
+                     dynamic-update="true" lazy="false" name="com.inheritance.samples.domain.joinedsubclass.CustomizedBroker"
+                     extends="com.inheritance.samples.domain.joinedsubclass.Role"
+                     select-before-update="false"
+                     table="role_brokers">
+        <key on-delete="noaction">
+            <column name="role_id"/>
+            <column name="party_id"/>
+            <column name="determinant_value"/>
+        </key>
+        <property column="profile_summary" generated="never" lazy="false" name="profileSummary" optimistic-lock="true" type="string" unique="false"/>
+        <property column="additional_profile_summary" generated="never" lazy="false" name="additionalProfileSummary" optimistic-lock="true" type="string" unique="false"/>
+    </joined-subclass>
+</hibernate-mapping>

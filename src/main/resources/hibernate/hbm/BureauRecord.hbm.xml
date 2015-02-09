@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="field">
+    <class
+            name="com.inheritance.samples.domain.BureauRecord"
+            table="CZ_BUREAU_RECORDS" lazy="false" dynamic-insert="true"
+            dynamic-update="true">
+        <composite-id name="key"
+                      class="com.inheritance.samples.domain.BureauRecordKey">
+            <key-property name="bureauServiceCode" column="BUREAU_SERVICE_CODE"
+                          type="string"/>
+
+            <key-property name="bureauProductId" column="BUREAU_PRODUCT_ID"
+                          type="string"/>
+            <key-property name="partyId" column="PARTY_ID" type="string"/>
+        </composite-id>
+        <property name="firstName" column="FIRST_NAME" type="string"/>
+        <property name="lastName" column="LAST_NAME" type="string"/>
+    </class>
+</hibernate-mapping>

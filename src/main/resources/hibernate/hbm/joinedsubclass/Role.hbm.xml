@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="true" dynamic-update="true" lazy="false" mutable="true" name="com.inheritance.samples.domain.joinedsubclass.Role" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="roles">
+        <composite-id class="com.inheritance.samples.domain.joinedsubclass.RoleKey" mapped="false" name="roleKey" unsaved-value="undefined">
+            <key-property column="role_id" name="roleId" type="string"/>
+            <key-property column="party_id" name="partyId" type="string"/>
+            <key-property column="determinant_value" name="determinantValue" type="string"/>
+        </composite-id>
+        <joined-subclass dynamic-insert="true" dynamic-update="true" lazy="false" name="com.inheritance.samples.domain.joinedsubclass.Broker" select-before-update="false" table="role_brokers">
+            <key on-delete="noaction">
+                <column name="role_id"/>
+                <column name="party_id"/>
+                <column name="determinant_value"/>
+            </key>
+            <property column="profile_summary" generated="never" lazy="false" name="profileSummary" optimistic-lock="true" type="string" unique="false"/>
+        </joined-subclass>
+    </class>
+</hibernate-mapping>
