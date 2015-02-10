@@ -5,7 +5,6 @@
 
 <hibernate-configuration>
     <session-factory>
-        <mapping resource="hibernate/hbm/BureauRecord.hbm.xml"/>
         <mapping resource="hibernate/hbm/unionsubclass/CustomizedContractEmployee.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
